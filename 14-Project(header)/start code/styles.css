@@ -4,6 +4,12 @@
   background-color: var(--common-white);
   padding: 16px;
 }
+.header-container {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 8px;
+  align-items: center;
+}
 
 .logo {
   display: block;
@@ -33,8 +39,20 @@
 
 .posts {
   margin-bottom: 80px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
 }
-
+@media (min-width: 768px) {
+  .posts {
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .post:first-child {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+}
 .post > a {
   position: relative;
   color: var(--common-white);
